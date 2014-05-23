@@ -57,3 +57,6 @@ end
 gem 'gravtastic'
 gem 'bootstrap-sass'
 gem 'devise'
+
+gem 'carrierwave'
+gem 'fog', '~> 1.3.1'
