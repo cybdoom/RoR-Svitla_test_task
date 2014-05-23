@@ -28,3 +28,15 @@ SvitlaTaskV3::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 end
+
+CarrierWave.configure do |config|
+  config.fog_credentials = {
+    provider: 'AWS',
+    aws_access_key_id: 'AKIAIOHG2QCOZGEKJXUA',
+    aws_secret_access_key: '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',
+    region: 'eu-west-1'
+  }
+  config.fog_directory = 'S3_birukova'
+  config.fog_public = true
+  config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
+end
