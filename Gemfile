@@ -50,3 +50,4 @@ end
 gem 'gravtastic'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'quiet_assets'
