@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'carrierwave'
 gem 'fog', '~> 1.3.1'
+gem "mini_magick"
 
 group :development do
   gem 'pry'
