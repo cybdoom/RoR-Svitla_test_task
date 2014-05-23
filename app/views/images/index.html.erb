@@ -1,6 +1,6 @@
-<div class='row-fluid'>
+<div class='row'>
   <% @images.each do |image| %>
-    <div class='span4'><%= image_tag image.url %></div>
+    <div class='col-xs-4'><p><%= image_tag image.url %></p></div>
   <% end %>
 </div>
   <%= form_tag images_path, method: :get, id: 'file_upload' %>
