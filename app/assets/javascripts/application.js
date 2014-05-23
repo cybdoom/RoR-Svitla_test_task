@@ -22,3 +22,9 @@
 //= require jquery.fileupload-audio
 //= require jquery.fileupload-validate
 //= require_tree .
+
+$(document).ready(function(){
+  $("#avatar").on('click', function() {
+    $('#panel').fadeToggle(100);
+  });
+});
