@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.ui.widget
+//= require jquery.iframe-transport
+//= require jquery.fileupload
+//= require jquery.fileupload-process
+//= require jquery.fileupload-image
+//= require jquery.fileupload-video
+//= require jquery.fileupload-audio
+//= require jquery.fileupload-validate
 //= require_tree .

@@ -4,4 +4,7 @@ class Image < ActiveRecord::Base
 
   belongs_to :user
 
+  def url
+    file.url
+  end
 end

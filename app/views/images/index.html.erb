@@ -1,1 +1,47 @@
-!!!
+<div class='row-fluid'>
+  <% @images.each do |image| %>
+    <div class='span4'><%= image_tag image.url %></div>
+  <% end %>
+</div>
+  <%= form_tag images_path, method: :get, id: 'file_upload' %>
+  <div class='row-fluid'>
+    <span class='span2 btn btn-success fileinput-button'>
+      <i class="glyphicon glyphicon-plus"></i>
+      <span>Add Files</span>
+      <%= file_field_tag 'files[]', multiple: true, class: 'fileinput-button'%>
+    </span>
+    <%= submit_tag 'Upload', class: "span2 btn btn-primary start", id: "submit_upload"%>
+</div>
+<div id="progress" class="progress">
+  <div class="progress-bar progress-bar-success"></div>
+</div>
+<div id="files" class="files"></div>
+<script>
+$(function () {
+    $('#file_upload').fileupload({
+        dataType: 'json',
+        add: function (e, data) {
+            data.context = $('#submit_upload')
+                .click(function () {
+                    data.context = $('<p/>').text('Uploading...').replaceAll($(this));
+                    data.submit();
+                });
+        },
+        done: function (e, data) {
+            data.context.text('Upload finished.');
+        }
+    }).on('fileuploadadd', function (e, data) {
+        data.context = $('<div/>').appendTo('#files');
+        $.each(data.files, function (index, file) {
+            var node = $('<p/>')
+                    .append($('<span/>').text(file.name));
+            if (!index) {
+                node
+                    .append('<br>')
+                    .append(uploadButton.clone(true).data(data));
+            }
+            node.appendTo(data.context);
+        });
+        });
+        });
+</script>
